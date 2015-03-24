@@ -14,12 +14,13 @@ import android.view.View;
 public class ColorPicker extends Dialog {
 
     public interface OnColorChangedListener {
-        void colorChanged(String key, int color);
+        void colorChanged(String key, int color, int view_id);
     }
 
     private OnColorChangedListener mListener;
     private int mInitialColor, mDefaultColor;
     private String mKey;
+    private int view_id;
 
     private static class ColorPickerView extends View {
         private Paint mPaint;
@@ -29,11 +30,14 @@ public class ColorPicker extends Dialog {
         private final int[] mHueBarColors = new int[258];
         private int[] mMainColors = new int[65536];
         private OnColorChangedListener mListener;
+        private int view_id;
 
-        ColorPickerView(Context c, OnColorChangedListener l, int color, int defaultColor) {
+        ColorPickerView(Context c, OnColorChangedListener l, int _view_id, int color, int defaultColor) {
             super(c);
             mListener = l;
             mDefaultColor = defaultColor;
+            view_id = _view_id;
+
 
             // Get the current hue from the current color and update the main
             // color field
@@ -261,21 +265,21 @@ public class ColorPicker extends Dialog {
             // If the touch event is located in the left button, notify the
             // listener with the current color
             if (x > 10 && x < 138 && y > 316 && y < 356)
-                mListener.colorChanged("", mCurrentColor);
+                mListener.colorChanged("", mCurrentColor, view_id);
 
             // If the touch event is located in the right button, notify the
             // listener with the default color
             if (x > 138 && x < 266 && y > 316 && y < 356)
-                mListener.colorChanged("", mDefaultColor);
+                mListener.colorChanged("", mDefaultColor, view_id);
 
             return true;
         }
     }
 
-    public ColorPicker(Context context, OnColorChangedListener listener,
+    public ColorPicker(Context context, OnColorChangedListener listener, int buttonId,
                        String key, int initialColor, int defaultColor) {
         super(context);
-
+        view_id = buttonId;
         mListener = listener;
         mKey = key;
         mInitialColor = initialColor;
@@ -286,13 +290,13 @@ public class ColorPicker extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         OnColorChangedListener l = new OnColorChangedListener() {
-            public void colorChanged(String key, int color) {
-                mListener.colorChanged(mKey, color);
+            public void colorChanged(String key, int color, int view_id) {
+                mListener.colorChanged(mKey, color, view_id);
                 dismiss();
             }
         };
 
-        setContentView(new ColorPickerView(getContext(), l, mInitialColor,
+        setContentView(new ColorPickerView(getContext(), l, view_id, mInitialColor,
                 mDefaultColor));
         setTitle("Pick a color");
 

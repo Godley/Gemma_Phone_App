@@ -16,14 +16,14 @@ public class ColorPickerActivity extends Activity implements
     }
 
     @Override
-    public void colorChanged(String str,int color) {
-        ColorPickerActivity.this.findViewById(android.R.id.content)
+    public void colorChanged(String str,int color, int view_id) {
+        ColorPickerActivity.this.findViewById(view_id)
                 .setBackgroundColor(color);
     }
 
     Activity activity;
 
     public void getColor(View v) {
-        new ColorPicker(activity, this, "", Color.BLACK, Color.WHITE).show();
+        new ColorPicker(activity, this, v.getId(), "", Color.BLACK, Color.WHITE).show();
     }
 }
