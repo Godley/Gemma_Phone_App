@@ -52,7 +52,7 @@ public class ColorPickerActivity extends Activity implements
                     ColorDrawable buttonColor = (ColorDrawable) btn.getBackground();
                     if(buttonColor != null) {
                         int colorId = buttonColor.getColor();
-                        colString = Integer.toHexString(colorId);
+                        colString = Integer.toHexString(colorId).substring(2);
                     }
                 }
                 catch(ClassCastException e) {
@@ -70,8 +70,8 @@ public class ColorPickerActivity extends Activity implements
                     }
                     finally {
                         nfcString.append(colString);
-                        nfcString.append(Integer.toHexString(secondsInt));
-
+                        nfcString.append(secondsInt);
+                        nfcString.append(".");
                     }
                 }
 
