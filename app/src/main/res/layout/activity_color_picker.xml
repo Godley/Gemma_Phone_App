@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:text="Generate NFC"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="nfcButtonClick" />
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -74,25 +75,25 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
+                android:id="@+id/ledSeconds1"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2"
+                android:id="@+id/ledSeconds2"
                 android:layout_column="1" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3"
+                android:id="@+id/ledSeconds3"
                 android:layout_column="2" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4"
+                android:id="@+id/ledSeconds4"
                 android:layout_column="3" />
         </TableRow>
 
@@ -137,25 +138,25 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8"
+                android:id="@+id/ledSeconds5"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5"
+                android:id="@+id/ledSeconds6"
                 android:layout_column="1" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6"
+                android:id="@+id/ledSeconds7"
                 android:layout_column="2" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7"
+                android:id="@+id/ledSeconds8"
                 android:layout_column="3" />
         </TableRow>
 
@@ -200,25 +201,25 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText9"
+                android:id="@+id/ledSeconds9"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText10"
+                android:id="@+id/ledSeconds10"
                 android:layout_column="1" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText11"
+                android:id="@+id/ledSeconds11"
                 android:layout_column="2" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText12"
+                android:id="@+id/ledSeconds12"
                 android:layout_column="3" />
         </TableRow>
 
@@ -262,25 +263,25 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText13"
+                android:id="@+id/ledSeconds13"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText14"
+                android:id="@+id/ledSeconds14"
                 android:layout_column="1" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText15"
+                android:id="@+id/ledSeconds15"
                 android:layout_column="2" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText16"
+                android:id="@+id/ledSeconds16"
                 android:layout_column="3" />
         </TableRow>
     </TableLayout>
