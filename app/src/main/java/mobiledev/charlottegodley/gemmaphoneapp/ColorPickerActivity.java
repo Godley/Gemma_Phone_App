@@ -93,6 +93,14 @@ public class ColorPickerActivity extends Activity implements
                     }
                     finally {
                         nfcString.append(colString);
+                        if(secondsInt < 10)
+                        {
+                            nfcString.append("0");
+                        }
+                        if(secondsInt > 99)
+                        {
+                            secondsInt = 99
+                        }
                         nfcString.append(secondsInt);
                     }
                 }
